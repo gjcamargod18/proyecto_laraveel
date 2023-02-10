@@ -14,7 +14,7 @@ class PlantaController extends Controller
      */
     public function index()
     {
-        return view('empleados.planta');
+        
     }
 
     /**
@@ -35,7 +35,7 @@ class PlantaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

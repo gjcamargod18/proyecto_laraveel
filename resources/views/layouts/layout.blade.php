@@ -7,8 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="{{route('/')}}">Inicio</a>
-        <a class="nav-link" href="{{route('planta')}}">Empleados Planta</a>
-        <a class="nav-link" href="{{route('contratista')}}">Empleados Contratista</a>
+        <a class="nav-link" href="{{route('create')}}">Empleados</a>
       </div>
     </div>
   </div>

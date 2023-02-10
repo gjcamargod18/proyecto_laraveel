@@ -14,7 +14,8 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-        //
+        $datos['empleados'] = Empleados::paginate(10);
+        return view('empleados.create_empleado',$datos);
     }
 
     /**
@@ -35,7 +36,14 @@ class EmpleadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'identificacion' => ['required'],
+            'nombres' => ['required'],
+            'salario' => ['required']
+        ]);
+        $datos_empleados = request()->except('_token');
+        Empleados::insert($datos_empleados);
+        return redirect('empleados/');
     }
 
     /**
@@ -55,9 +63,9 @@ class EmpleadosController extends Controller
      * @param  \App\Models\Empleados  $empleados
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empleados $empleados)
-    {
-        //
+
+    public function edit(Empleados $empleado){
+        return view('empleados.edit', ['empleado'=> $empleado]);
     }
 
     /**
@@ -67,9 +75,19 @@ class EmpleadosController extends Controller
      * @param  \App\Models\Empleados  $empleados
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleados $empleados)
+    public function update(Request $request, Empleados $empleado)
     {
-        //
+            $request->validate([
+            'identificacion' => ['required'],
+            'nombres' => ['required'],
+            'salario' => ['required']
+        ]);
+        $empleado->identificacion = $request->input('identificacion');
+        $empleado->nombres = $request->input('nombres');
+        $empleado->salario = $request->input('salario');
+        $empleado->save();
+
+        return to_route('create');
     }
 
     /**
@@ -78,8 +96,11 @@ class EmpleadosController extends Controller
      * @param  \App\Models\Empleados  $empleados
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empleados $empleados)
+    public function destroy(Empleados $empleado)
     {
-        //
+        $empleado->delete();
+        return to_route('create');
+
     }
 }
+
