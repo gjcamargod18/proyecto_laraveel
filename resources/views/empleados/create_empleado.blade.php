@@ -24,11 +24,11 @@
                      <table id="empleados" class="table table-striped shadow-lg" style="width:100%">
                             <thead>
                                  <tr>
-                                   <th scope="col">Id usuario</th>
-                                   <th scope="col">Identificacion</th>
-                                   <th scope="col">Tipo de empleado</th>
-                                   <th scope="col">Nombres</th>
-                                   <th scope="col">Salario</th>
+                                   <th >Id usuario</th>
+                                   <th >Identificacion</th>
+                                   <th >Tipo de empleado</th>
+                                   <th >Nombres</th>
+                                   <th >Salario</th>
                                    <th></th>
                                    <th></th>
                                </tr>
