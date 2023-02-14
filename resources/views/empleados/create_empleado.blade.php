@@ -63,7 +63,32 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>    
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#empleados').DataTable();
+            $('#empleados').DataTable({
+                                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay datos disponibles en la tabla",
+                    "info": "Mostrando del _START_ al _END_ de un total de _TOTAL_ entradas",
+                    "infoEmpty": "mostrando 0 de 0 de un total de 0 entradas",
+                    "infoFiltered": "(filtrado de un total de _MAX_ entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "loadingRecords": "cargando...",
+                    "processing": "",
+                    "search": "Buscar usuarios:",
+                    "zeroRecords": "No se encontraron registros",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "aria": {
+                        "sortAscending": ": active para ordenar la columna en orden ascendente",
+                        "sortDescending": ": active para ordenar la columna en orden descendente"
+                    }
+                }
+            });
         });
     </script>  
    @endsection   
